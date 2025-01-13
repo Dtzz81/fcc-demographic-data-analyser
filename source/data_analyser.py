@@ -2,8 +2,7 @@ import pandas as pd
 
 
 def calculate_demographic_data(print_data=True):
-    # Read data from file
-    df = None
+    df = pd.read_csv("../adult_data.csv")
 
     # How many of each race are represented in this dataset? This should be a Pandas series with race names as the index labels.
     race_count = None
@@ -39,6 +38,8 @@ def calculate_demographic_data(print_data=True):
 
     # Identify the most popular occupation for those who earn >50K in India.
     top_IN_occupation = None
+
+
 
     # DO NOT MODIFY BELOW THIS LINE
 
