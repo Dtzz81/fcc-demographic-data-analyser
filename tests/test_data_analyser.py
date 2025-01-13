@@ -14,6 +14,12 @@ def test_can_read_data_from_file():         # the data_analyser.py file not used
     df = pd.read_csv("../adult_data.csv")
 
     # assert
-
     assert list(df.columns) == test_columns
+
+def test_each_race_count():
+    df = pd.read_csv("../adult_data.csv")
+    count_race = df['race'].value_counts()
+
+    # assert needs to be .equals not == cuz otherwise it returns boolean
+    assert data_analyser.calculate_demographic_data(print_data=False)['race_count'].equals(count_race)
 
