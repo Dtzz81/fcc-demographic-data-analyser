@@ -9,14 +9,6 @@ def calculate_demographic_data(print_data=True):
     average_age_men = df[df["sex"] == "Male"]["age"].mean().round(1)
 
 
-
-
-
-
-
-
-
-
     # What is the percentage of people who have a Bachelor's degree?
     percentage_bachelors = None
 

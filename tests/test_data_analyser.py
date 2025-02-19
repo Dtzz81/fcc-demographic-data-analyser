@@ -24,8 +24,6 @@ def test_each_race_count():
     assert data_analyser.calculate_demographic_data(print_data=False)['race_count'].equals(count_race)
 
 
-
-
 def test_average_age_men():
     df = pd.read_csv("../adult_data.csv")
 
@@ -38,8 +36,16 @@ def test_average_age_men():
 # a   1.5
 # b   2.5
 # dtype: float64
-  
+
 
     expected = df[df["sex"] == "Male"]["age"].mean().round(1)
+    result = calculate_demographic_data(print_data=False)["average_age_men"].round(1)
+    assert result == expected
+
+def test_percentage_of_ppl_with_bachelor_degree():
+    df = pd.read_csv("../adult_data.csv")
+
+
+    expected = df[df["education"] == "Bachelor"].mean().round(1)
     result = calculate_demographic_data(print_data=False)["average_age_men"].round(1)
     assert result == expected
